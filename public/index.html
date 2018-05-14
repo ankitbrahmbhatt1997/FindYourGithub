@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Github Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <nav class="blue accent-3">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Github Finder</a>
+            </div>
+        </div>
+
+    </nav>
+    <div class=" alert"></div>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col s0 m2"></div>
+            <div class="col s12 m8 center-align z-depth-1">
+                <h3>Search Github Users</h3>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">search</i>
+                    <input id="icon_prefix" type="text" class="validate" placeholder="Github User...">
+
+                </div>
+            </div>
+            <div class="col s0 m2"></div>
+        </div>
+        <div class="show-profile">
+
+        </div>
+    </div>
+
+    <div class="container show-repo">
+
+    </div>
+
+
+    <!-- template -->
+    <script id="profile-template" type="text/x-handlebars-template">
+        
+            <div class="col s12">
+                <div class="card">
+                    <div class="row">
+                        <div class="col s12 m5">
+                    <div class="card-image">
+                        <img src="{{profileImage}}"></img>
+                        <span class="card-title">{{name}}</span>
+                    </div>
+                </div>
+                <div class="col s12 m7">
+                    <div class="card-content">
+                       
+                            <div class="row">
+                                <div class="col s3">
+                                    <span class="badge blue white-text">repo : {{repo}}</span>
+                                </div>
+                                <div class="col s3">
+                                    <span class="badge blue white-text">Gist : {{gist}}</span>
+                                </div>
+                                <div class="col s3">
+                                    <span class="badge blue white-text">followers : {{followers}}</span>
+                                </div>
+                                <div class="col s3">
+                                    <span class="badge blue white-text">following : {{following}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <ul class="collection">
+                                        <li class="collection-item">Company : {{company}}</li>
+                                        <li class="collection-item">Website : {{blog}}</li>
+                                        <li class="collection-item">Location : {{location}}</li>
+                                        <li class="collection-item">hireable : {{hireable}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                    <div class="card-action center-align">
+                        <a href="{{url}}" target="_blank" class="center">Visit The Profile</a>
+                    </div>
+                </div>
+            </div>
+        
+<h3 class="center-align blue-text text-darken-2">Latest Repos</h3>
+
+
+    </script>
+
+    <!-- template for repos -->
+    <script id="repo-template" type="text/x-handlebars-template">
+        
+    <div class="col s12">
+        <div class="card-panel">
+            <div class="row">
+                <div class="col s5">
+                    <a href="{{url}}" target="_blank" class="flow-text">{{name}}</a>
+                </div>
+                <div class="col s7">
+                        <span class="badge blue white-text">stargazers : {{stargazers}}</span>
+                        <span class="badge blue white-text">forks : {{forks}}</span>
+                        <span class="badge blue white-text">watchers : {{watchers}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    </script>
+
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="/Js/handlebars.js"></script>
+    <script src="/Js/main.js"></script>
+
+</body>
+
+</html>
